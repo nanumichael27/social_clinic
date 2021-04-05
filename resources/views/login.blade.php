@@ -61,18 +61,18 @@
                 <nav class="navbar">
                     <div class="container">
                         <div class="navbar-header">
-                            <a href="index.html" class="navbar-brand"><img src="assets/img/logo.png" alt="logo"></a>
+                            <a href="{{ route('index') }}" class="navbar-brand"><img src="assets/img/logo.png" alt="logo"></a>
                         </div>
                         <div class="mainmenu-and-right-button">
                             <div id="main-nav" class="stellarnav">
                                 <ul id="nav" class="nav navbar-nav">
-                                    <li class="active"><a href="index.html#home">Home</a></li>
+                                    <li class="active"><a href="{{ route('index') }}">Home</a></li>
                                     <li><a href="index.html#features">Service</a></li>
                                     <li><a href="index.html#about">About Us</a></li>
                                     <li><a href="#">Blog</a></li>
-                                    <li><a href="contact.html"> Contact </a></li>
+                                    <li><a href="{{ route('contact') }}"> Contact </a></li>
                                     <li class="white inline-block read-more">
-                                        <a class="white" href="login.html"> Login </a></li>
+                                        <a class="white" href="{{ route('login') }}"> Login </a></li>
                                 </ul>
                             </div>
                         </div>
@@ -105,7 +105,7 @@
                     <form action="#">
                             
                             <div class="col-md-12 col-xs-12 mt20 mb30"> 
-                            <span>  I Have no Account? <a href="register"> Register now </a> </span>
+                            <span>  I Have no Account? <a href="{{ route('index') }}"> Register now </a> </span>
                             </div>
                             
                             <div class="col-md-12 col-xs-12 mb30">
@@ -138,7 +138,7 @@
                                 <p> Be Smart enough to use <b>socialclinic.ng</b> to keep your social handles healthy. 
                                     We are offering the most Affordable and Efficient Social Media Growth to customers across the world </p>
                             </div>
-                            <div class="cta-button width50p xs-width100p right xs-left xs-mt30"><a href="register.html" class="read-more"> Register Now </a></div>
+                            <div class="cta-button width50p xs-width100p right xs-left xs-mt30"><a href="{{ route('register') }}" class="read-more"> Register Now </a></div>
                         </div>
                     </div>
                 </div>
@@ -196,7 +196,7 @@
                     <div class="col-md-12">
                         <div class="footer-copyright mt50 center">
                             <p>Copyright &copy; 2021,
-                            <a href="#"> Socialclinic.ng </a> All Rights Reserved.</p>
+                            <a href="{{ route('index') }}"> Socialclinic.ng </a> All Rights Reserved.</p>
                         </div>
                     </div>
                 </div>

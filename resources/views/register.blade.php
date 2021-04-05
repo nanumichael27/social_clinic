@@ -1,18 +1,18 @@
 <!doctype html>
 <html lang="zxx">
-<head> 
+<head>
     <!--====== USEFULL META ======-->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, user-scalable=no" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta property="og:image" content="images/socialc-fav.png"/>
+    <meta property="og:image" content="images/favicon.png"/>
     <meta property="og:title" content="Social Clinic" />
     <meta name="keywords" content="socilal, clinic, media, Platform, pay, advertise, links, Marketing, Platform, Increase, treat, online, presence ">
     <meta name="description" content="We treat all social media issues - Increase your social media presence through a Social Marketing Platform 
                                       with real Human involvement" />
     <!--====== TITLE TAG ======-->
-    <title>Social Clinic - Contact us </title>
+    <title>Social Clinic - Login </title>
 
     <!--====== FAVICON ICON =======-->
     <link rel="shortcut icon" type="image/ico" href="assets/img/favicon.png" />
@@ -31,18 +31,18 @@
     <!--[if lt IE 9]>
         <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
         <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-        <![endif]--> 
+        <![endif]-->
         <style> 
-             .white {
-                 color:#ffffff !important; }
-                
-              .white :hover {
-                  color: #000 !important;
-              }
-        </style>
+            .white {
+                color:#ffffff !important; }
+               
+             .white :hover {
+                 color: #000 !important;
+             }
+       </style>
 </head>
 
-<body data-spy="scroll" data-target=".mainmenu-area" data-offset="90">
+<body class="single-page" data-spy="scroll" data-target=".mainmenu-area" data-offset="90">
 
     <!--- PRELOADER -->
     <div class="preeloader">
@@ -53,8 +53,7 @@
     <a href="#scroolup" class="scrolltotop"><i class="fa fa-long-arrow-up"></i></a>
 
     <!--START TOP AREA-->
-    <header class="top-area home3_top_area" id="home">
-		<span class="floating triangle1"></span>
+    <header class="top-area single-page" id="home">
         <div class="header-top-area" id="scroolup">
             <!--MAINMENU AREA-->
             <div class="mainmenu-area" id="mainmenu-area">
@@ -67,15 +66,13 @@
                         <div class="mainmenu-and-right-button">
                             <div id="main-nav" class="stellarnav">
                                 <ul id="nav" class="nav navbar-nav">
-                                    <li class="active"><a href="#home">Home</a></li>
-                                    <li><a href="#features"> Services </a></li>
-                                    <li><a href="#about"> About Us </a></li>
-                                    <li><a href="#news"> Blog </a></li>
-									<li><a href="contact.html"> Contact </a></li>
-                                    
+                                    <li class="active"><a href="{{ route('index') }}#home">Home</a></li>
+                                    <li><a href="index.html#features">Service</a></li>
+                                    <li><a href="index.html#about">About Us</a></li>
+                                    <li><a href="#">Blog</a></li>
+                                    <li><a href="{{ route('contact') }}"> Contact </a></li>
                                     <li class="white inline-block read-more">
-                                        <a class="white" href="login.html"> Login </a></li>
-                            
+                                        <a class="white" href="{{ route('login') }}"> Login </a></li>
                                 </ul>
                             </div>
                         </div>
@@ -84,54 +81,55 @@
             </div>
             <!--END MAINMENU AREA END-->
         </div>
-    </header> 
-    
-    <!--Contact area Start -->
-    <div class="container" id="contact">
-        <div class="row contact-form">
-            <div class="col-md-7">
+        <div class="page-barner-area">
+			<!--<img src="assets/img/banner.jpg" alt="">--->
+            <div class="area-bg"></div>
+            <div class="container">
                 <div class="row">
-                   <div class="col-md-12">
-                        <div class="area-title text-center">
-							<h2>Contact</h2>
-						</div>
-                       <br>
-                   </div>
-                    <div class="col-md-6">
-                        <input class="form-control" type="text" placeholder="Name">
+                    <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                        <div class="barner-text mt50 center">
+                            <h1> REGISTER HERE </h1>
+                        </div>
                     </div>
-                    <div class="col-md-6">
-                        <input type="email" class="form-control" placeholder="Enter email">
-                    </div>
-                    <div class="col-md-12">
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                    </div>
-                    <div class="col-md-12">
-                        <button class="read-more" type="submit">Submit</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-5 contact_details">
-                <div class="contact-address">
-                    <i class="fa fa-map fa-2x"></i>
-                    <h5>Location</h5>
-                    <p> You will always find us anywhere <br>
-                </div>
-                <div class="contact-address">
-                    <i class="fa fa-phone fa-2x"></i>
-                    <h5>Contact Number</h5>
-                    <p>+234600000000 </p>
-                </div>
-                <div class="contact-address">
-                    <i class="fa fa-globe fa-2x"></i>
-                    <h5>Online</h5>
-                    <p>Web: https://socilaclinic.ng </p>
-                    <p>Email: support@socilaclinic.ng </p>
                 </div>
             </div>
         </div>
-    </div>
-    <!--CONTACT AREA END-->
+    </header>
+    <!--END TOP AREA-->
+
+    <!--BLOG AREA-->
+    <section>
+        <div class="container">
+            <div class="row"> 
+                <div class="comment-box">
+                    <form action="#">
+                            <div class="col-md-12 col-xs-12 mt20 mb30"> 
+                            <span>  I Already have an Account? <a href="{{ route('login') }}"> Login Here </a> </span>
+                            </div>
+                            <div class="col-md-6 col-xs-12 mb30">
+                                <input name="comment_author" id="comment_author" type="text" placeholder="Name">
+                            </div>
+                            <div class="col-md-6 col-xs-12 mb30">
+                                <input name="comment_email" id="comment_email" type="email" placeholder="Email">
+                            </div>
+                            <div class="col-md-12 col-xs-12 mb30">
+                                <input name="comment_phone" id="comment_phone" type="text" placeholder="Phone Number">
+                            </div>
+                            <div class="col-md-6 col-xs-12 mb30">
+                                <input name="passw" id="comment_author" type="password" placeholder="Password">
+                            </div>
+                            <div class="col-md-6 col-xs-12 mb30">
+                                <input name="cpassw" id="comment_author" type="password" placeholder="Password">
+                            </div>
+                            <div class="col-md-4 col-xs-12 mb30">
+                                <button type="submit"> Register </button>
+                            </div>
+                        </div>
+                    </form>
+            </div>
+        </div>
+    </section>
+    <!--BLOG AREA END-->
 
     <!--FOOER AREA-->
     <footer class="footer-area sky-gray-bg padding-bottom-30 padding-top-30 relative wow fadeIn">
@@ -145,7 +143,7 @@
                                 <p> Be Smart enough to use <b>socialclinic.ng</b> to keep your social handles healthy. 
                                     We are offering the most Affordable and Efficient Social Media Growth to customers across the world </p>
                             </div>
-                            <div class="cta-button width50p xs-width100p right xs-left xs-mt30"><a href="register.html" class="read-more"> Register Now </a></div>
+                            <div class="cta-button width50p xs-width100p right xs-left xs-mt30"><a href="{{ route('login') }}" class="read-more"> Register Now </a></div>
                         </div>
                     </div>
                 </div>
