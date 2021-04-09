@@ -10,7 +10,7 @@
                                 <p> Be Smart enough to use <b>socialclinic.ng</b> to keep your social handles healthy.
                                     We are offering the most Affordable and Efficient Social Media Growth to customers across the world </p>
                             </div>
-                            <div class="cta-button width50p xs-width100p right xs-left xs-mt30"><a href="register.html" class="read-more"> Register Now </a></div>
+                            <div class="cta-button width50p xs-width100p right xs-left xs-mt30"><a href="{{ route('register') }}" class="read-more"> Register Now </a></div>
                         </div>
                     </div>
                 </div>

@@ -23,6 +23,7 @@
     <link href="{{ asset('assets/css/magnific-popup.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/css/theme.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/css/icons.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}">
 
     <!--====== MAIN STYLESHEETS ======-->
     <link href="{{ asset('style.css') }}" rel="stylesheet">

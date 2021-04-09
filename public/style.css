@@ -2249,7 +2249,7 @@ margin-bottom: 15px;
     top: 35%;
 }
 .navbar-header{width:15%;}
-.navbar-header img{width:100%;}
+.navbar-header img{min-width: 120px;}
 /********************* Pricing Table Style-7 ************************/
 .pos_relative {
     position: relative;

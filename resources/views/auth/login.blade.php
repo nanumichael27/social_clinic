@@ -1,18 +1,19 @@
 <!doctype html>
 <html lang="zxx">
+
 <head>
     <!--====== USEFULL META ======-->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, user-scalable=no" />
+    <meta name="viewport" content="width=device-width, user-scalable=no" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta property="og:image" content="images/favicon.png"/>
+    <meta property="og:image" content="images/favicon.png" />
     <meta property="og:title" content="Social Clinic" />
     <meta name="keywords" content="socilal, clinic, media, Platform, pay, advertise, links, Marketing, Platform, Increase, treat, online, presence ">
     <meta name="description" content="We treat all social media issues - Increase your social media presence through a Social Marketing Platform 
                                       with real Human involvement" />
     <!--====== TITLE TAG ======-->
-    <title>Social Clinic - Login </title>
+    <title>Social Clinic - Register </title>
 
     <!--====== FAVICON ICON =======-->
     <link rel="shortcut icon" type="image/ico" href="assets/img/favicon.png" />
@@ -26,20 +27,21 @@
     <!--====== MAIN STYLESHEETS ======-->
     <link href="style.css" rel="stylesheet">
     <link href="assets/css/responsive.css" rel="stylesheet">
-	<link rel="stylesheet" href="assets/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="assets/css/materialdesignicons.min.css">
     <script src="assets/js/vendor/modernizr-2.8.3.min.js"></script>
     <!--[if lt IE 9]>
         <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
         <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
-        <style> 
-            .white {
-                color:#ffffff !important; }
-               
-             .white :hover {
-                 color: #000 !important;
-             }
-       </style>
+    <style>
+        .white {
+            color: #ffffff !important;
+        }
+
+        .white :hover {
+            color: #000 !important;
+        }
+    </style>
 </head>
 
 <body class="single-page" data-spy="scroll" data-target=".mainmenu-area" data-offset="90">
@@ -61,18 +63,19 @@
                 <nav class="navbar">
                     <div class="container">
                         <div class="navbar-header">
-                            <a href="index.html" class="navbar-brand"><img src="assets/img/logo.png" alt="logo"></a>
+                            <a href="{{ route('index') }}" class="navbar-brand"><img src="assets/img/logo.png" alt="logo"></a>
                         </div>
                         <div class="mainmenu-and-right-button">
                             <div id="main-nav" class="stellarnav">
                                 <ul id="nav" class="nav navbar-nav">
-                                    <li class="active"><a href="{{ route('index') }}#home">Home</a></li>
+                                    <li class="active"><a href="{{ route('index') }}">Home</a></li>
                                     <li><a href="index.html#features">Service</a></li>
                                     <li><a href="index.html#about">About Us</a></li>
                                     <li><a href="#">Blog</a></li>
                                     <li><a href="{{ route('contact') }}"> Contact </a></li>
                                     <li class="white inline-block read-more">
-                                        <a class="white" href="{{ route('login') }}"> Login </a></li>
+                                        <a class="white" href="{{ route('login') }}"> Login </a>
+                                    </li>
                                 </ul>
                             </div>
                         </div>
@@ -82,13 +85,13 @@
             <!--END MAINMENU AREA END-->
         </div>
         <div class="page-barner-area">
-			<!--<img src="assets/img/banner.jpg" alt="">--->
+            <!--<img src="assets/img/banner.jpg" alt="">--->
             <div class="area-bg"></div>
             <div class="container">
                 <div class="row">
                     <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
                         <div class="barner-text mt50 center">
-                            <h1> REGISTER HERE </h1>
+                            <h1> LOGIN </h1>
                         </div>
                     </div>
                 </div>
@@ -100,32 +103,55 @@
     <!--BLOG AREA-->
     <section>
         <div class="container">
-            <div class="row"> 
+            <div class="row">
                 <div class="comment-box">
-                    <form action="#">
-                            <div class="col-md-12 col-xs-12 mt20 mb30"> 
-                            <span>  I Already have an Account? <a href="{{ route('login') }}"> Login Here </a> </span>
-                            </div>
-                            <div class="col-md-6 col-xs-12 mb30">
-                                <input name="comment_author" id="comment_author" type="text" placeholder="Name">
-                            </div>
-                            <div class="col-md-6 col-xs-12 mb30">
-                                <input name="comment_email" id="comment_email" type="email" placeholder="Email">
-                            </div>
-                            <div class="col-md-12 col-xs-12 mb30">
-                                <input name="comment_phone" id="comment_phone" type="text" placeholder="Phone Number">
-                            </div>
-                            <div class="col-md-6 col-xs-12 mb30">
-                                <input name="passw" id="comment_author" type="password" placeholder="Password">
-                            </div>
-                            <div class="col-md-6 col-xs-12 mb30">
-                                <input name="cpassw" id="comment_author" type="password" placeholder="Password">
-                            </div>
-                            <div class="col-md-4 col-xs-12 mb30">
-                                <button type="submit"> Register </button>
-                            </div>
+                    @if ($errors->any())
+                    <center>
+                        @foreach($errors->all() as $error)
+                        <div class="alert alert-warning">
+                            <strong>Warning!</strong> {{ $error }}.
                         </div>
-                    </form>
+                        @endforeach
+                    </center>
+                    @endif
+                    <form action="/login" method="POST">
+                        @csrf
+                        <div class="col-md-12 col-xs-12 mt20 mb30">
+                            <span> I Have no Account? <a href="{{ route('index') }}"> Register now </a> </span>
+                        </div>
+
+                        <!-- @error('email')
+                            <span class="invalid-feedback is-invalid">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror -->
+
+                        <div class="col-md-12 col-xs-12 mb30">
+                            <input name="email" id="email" type="email" placeholder="Your Email" value="{{ old('email') }}">
+                        </div>
+
+                        <!-- @error('password')
+                            <span class="invalid-feedback is-invalid">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror -->
+                        <div class="col-md-12 col-xs-12 mb30">
+                            <input name="password" id="password" type="password" placeholder="Enter Password">
+                        </div>
+
+
+                        <div class="form-check mb30">
+                            <label class="form-check-label" for="remember">
+                                Remember Me
+                                <span><input class="form-check-input" name="remember" type="checkbox" id="remember"></span>
+                            </label>
+                        </div>
+
+                        <div class="col-md-4 col-xs-12 mb30">
+                            <button type="submit"> Login Now </button>
+                        </div>
+                </div>
+                </form>
             </div>
         </div>
     </section>
@@ -140,10 +166,10 @@
                         <div class="call-to-action flex-v-center">
                             <div class="cta-content width50p xs-width100p">
                                 <h3 class="font32 xs-font24">Get Started Today </h3>
-                                <p> Be Smart enough to use <b>socialclinic.ng</b> to keep your social handles healthy. 
+                                <p> Be Smart enough to use <b>socialclinic.ng</b> to keep your social handles healthy.
                                     We are offering the most Affordable and Efficient Social Media Growth to customers across the world </p>
                             </div>
-                            <div class="cta-button width50p xs-width100p right xs-left xs-mt30"><a href="{{ route('login') }}" class="read-more"> Register Now </a></div>
+                            <div class="cta-button width50p xs-width100p right xs-left xs-mt30"><a href="{{ route('register') }}" class="read-more"> Register Now </a></div>
                         </div>
                     </div>
                 </div>
@@ -158,7 +184,7 @@
                         </div>
                         <div class="footer-about">
                             <p>
-                             We treat all social media issues, Increase your social media handles with real humans providing direct organic reach. 
+                                We treat all social media issues, Increase your social media handles with real humans providing direct organic reach.
                             </p>
                         </div>
                     </div>
@@ -201,7 +227,8 @@
                     <div class="col-md-12">
                         <div class="footer-copyright mt50 center">
                             <p>Copyright &copy; 2021,
-                            <a href="#"> Socialclinic.ng </a> All Rights Reserved.</p>
+                                <a href="{{ route('index') }}"> Socialclinic.ng </a> All Rights Reserved.
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -215,4 +242,5 @@
     <script src="assets/js/main.js"></script>
 
 </body>
+
 </html>

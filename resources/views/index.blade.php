@@ -27,7 +27,7 @@
                     <div class="about-content xs-mb50">
                         <h2 class="mb30 justify"> We Offer Affordable and Efficient Social Media Growth. </h2>
                         <p> We offer the best social media services that allows you boost your online presence across all social media platforms at affordable amounts. We are unique because we boost social media handles and and contents organically with real hummans. </p>
-                        <a href="#" class="read-more mt30 inline-block"> Get Started Now </a>
+                        <a href="{{ route('register') }}" class="read-more mt30 inline-block"> Get Started Now </a>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
