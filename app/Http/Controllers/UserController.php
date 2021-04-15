@@ -31,7 +31,6 @@ class UserController extends Controller
         $orders = $this->getOrdersDesc();
         return view('dashboard.orders', ['orders' => $orders]);
     }
-
     
     public function getOrdersDesc($quantity = null) {
         return Order::where('user_id', Auth::id())->orderBy('id', 'desc')->take($quantity)->get();

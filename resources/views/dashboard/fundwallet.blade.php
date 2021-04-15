@@ -72,9 +72,8 @@ Transaction = {
             data: [{name: 'transaction', value: data}],
             success: (data) => {
                 if(data == "success"){
-                    swal("Good job!", "Transaction has be successfully processed", "success").then(() => {
-                        window.location="{{route('dashboard')}}";
-                    });
+                    swal("Good job!", "Transaction has be successfully processed", "success");
+                    setTimeout(() => {window.location="{{route('dashboard')}}"}, 2000);
                 }else{
                     swal("Something went wrong!", data, 'error').then(() => {
                         window.location="{{route('dashboard')}}";
