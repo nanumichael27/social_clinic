@@ -43,6 +43,12 @@
             </a>
           </li>
           <li class="nav-item">
+            <a href="{{route('settings')}}" class="nav-link">
+              <i class="fas fa-cogs nav-icon"></i>
+              <p>Settings</p>
+            </a>
+          </li>
+          <li class="nav-item">
             <a href="{{ route('logout') }}" onclick="event.preventDefault();
                   document.getElementById('logout-form').submit();" class="nav-link">
               <i class="fa fa-power-off nav-icon"></i>
