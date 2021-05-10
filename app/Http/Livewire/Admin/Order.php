@@ -56,6 +56,11 @@ class Order extends Component
             ]);
         } else {
             $this->message = $response->body();
+            $this->dispatchBrowserEvent('sweetalert', [
+                'icon' => 'warning',
+                'title' => 'An error occured!',
+                'text' => $this->message,
+            ]);
         }
     }
 }
