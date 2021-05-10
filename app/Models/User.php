@@ -80,6 +80,7 @@ class User extends Authenticatable
             'quantity' => intval($request->quantity),
         ];
         $order = new Order($values);
+        
         if($order->canBePlacedBy($this)){
             $amount = $order->getUpdatedPrice();
             $this->chargeAccount($amount);

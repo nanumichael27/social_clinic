@@ -71,7 +71,11 @@
                     <td>{{$order->quantity}}</td>
                     <td>&#x20a6;{{$order->price}}</td>
                     <td>
-                        <span class="badge badge-success">successful</span>
+                        @if($order->status == 'successful')
+                        <span class="badge badge-success">{{$order->status}}</span>
+                        @else
+                        <span class="badge badge-warning">{{$order->status}}</span>
+                        @endif
                     </td>
                 </tr>
                 @endforeach

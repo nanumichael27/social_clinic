@@ -94,6 +94,10 @@
                                     likes, comments or views)</small></label>
                             <input class="form-control py-4" id="quantity" placeholder="Quantity" type="number" name="quantity" />
                         </div>
+                        <div class="form-group">
+                            <label class="small mb-1" for="">Unit Price(NGN)<small>(how much would one unit cost)</small></label>
+                            <input disabled class="form-control py-4" id="unitPrice" placeholder="Unit price" type="number" name="unit" />
+                        </div>
                         <div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0">
                             <button class="btn btn-primary" type="submit" id="submit_order_button">Continue</button>
                         </div>
@@ -107,8 +111,14 @@
 
 @section('js')
 <script>
+$(function(){
+    updateUnitPrice();
+})
+
             $("#order_category").on('change',(function(e) {
                 e.preventDefault();
+
+                updateUnitPrice();
 
                 var t = $(this).children("option:selected").val();
                 //
@@ -122,6 +132,22 @@
                     }
                 })
             );
+
+            function updateUnitPrice(){
+                $.ajax({
+                    url: "{{route('getunitprice')}}",
+                    type: 'POST',
+                    data: [
+                        {name: 'category', value: $('#order_category').val()},
+                    ],
+                    success: function(data){
+                        $('#unitPrice').val(data);
+                    },
+                    error: function(){
+                        swal("Oops! Something went wrong!", 'please check your network connection', 'error');
+                    }
+                });
+            }
 
 
             $("#order_form").submit(function(event){

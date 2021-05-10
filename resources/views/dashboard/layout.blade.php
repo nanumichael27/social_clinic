@@ -106,6 +106,16 @@
     <!-- <script src="{{asset('vendor/sweetalert/sweetalert.all.js')}}"></script> -->
     <script src="{{ asset('js/sweetalert.min.js') }}"></script>
 
+    <script>
+window.addEventListener('sweetalert', event => {
+    swal({
+        title: event.detail.title,
+        text: event.detail.text,
+        icon: event.detail.icon,
+        });
+})
+</script>
+
     @section('js')
 
     @show

@@ -23,6 +23,7 @@ class CreateUsersTable extends Migration
             $table->timestamps();
             $table->string('phone');
             $table->float('balance')->default(0.00);
+            $table->boolean('is_admin')->default(false);
         });
     }
 

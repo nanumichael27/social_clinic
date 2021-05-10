@@ -22,12 +22,12 @@
                         <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav">
                                 <a class="nav-link" href="{{ route('fundwallet') }}">
-                                <div class="sb-nav-link-icon"><i class="fa fa-landmark"></i></div>
+                                <div class="sb-nav-link-icon"><i class=""></i></div>
                                 Fund Wallet</a>
                                 <!-- <a class="nav-link" href="{{ route('fundmanual') }}">Manual Payment</a>
                                 <a class="nav-link" href="{{ route('fundcrypto') }}">Bitcoin Payment</a> -->
                                 <a class="nav-link" href="{{ route('paymenthistory') }}">
-                                <div class="sb-nav-link-icon"><i class="fa fa-history"></i></div>
+                                <div class="sb-nav-link-icon"><i class=""></i></div>
                                 Payment History</a>
                             </nav>
                         </div>

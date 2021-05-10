@@ -23,6 +23,7 @@ class CreateOrdersTable extends Migration
             $table->float('price');
             $table->string('link')->nullable(true);
             $table->string('user_id');
+            $table->string('status')->default('pending');
         });
     }
 

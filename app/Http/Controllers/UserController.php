@@ -10,6 +10,11 @@ class UserController extends Controller
 {
     //
 
+    public function __construct()
+    {
+        $this->middleware('check.admin');
+    }
+
     public function index(){
         $orders = $this->getOrdersDesc(3);
         return view('dashboard.home', [
@@ -34,5 +39,10 @@ class UserController extends Controller
     
     public function getOrdersDesc($quantity = null) {
         return Order::where('user_id', Auth::id())->orderBy('id', 'desc')->take($quantity)->get();
+    }
+
+    public function getUnitPrice(Request $request){
+        $order = new Order();
+        return $order->getUnitPrice($request->category);
     }
 }
