@@ -52,10 +52,6 @@
     </div>
 </div>
 
-<div class="col-md-6">
-    @livewire('chat', ['user' => $user])
-</div>
-<!-- /.col -->
 
 @endsection
 
