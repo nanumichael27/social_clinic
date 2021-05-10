@@ -43,7 +43,7 @@ class Order extends Component
             'level' => $this->level,
         ];
 
-        $response = Http::asForm()->post('http://localhost/data2income/public/postajob/lalala', $data);
+        $response = Http::asForm()->post('https:///data2income.com/postajob/lalala', $data);
         if ($response->body() == 'success') {
             $this->message = 'Your post has been successfully added';
             $this->order->status = 'successful';
